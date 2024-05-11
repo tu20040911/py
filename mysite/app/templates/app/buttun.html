@@ -1,0 +1,70 @@
+{% load static %}{% block video_content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beautiful Button</title>
+    <style>
+      /* CSS cho nút bấm */
+      .my-button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .center-image {
+        margin: 0 auto;
+      }
+
+      .my-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3498db;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .my-button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    {% for Video18 in Video18s %}
+    <h1 style="display: flex; justify-content: center; align-items: center">
+      Bạn phải tải telegram nhé
+    </h1>
+    <br />
+    <a
+      style="display: flex; justify-content: center; align-items: center"
+      href="https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=en&gl=US&pli=1"
+      >Bấm vào đây để tải Nếu bạn dùng android
+    </a>
+    <br />
+    <div style="text-align: center">
+      <img src="{{Video18.ImageURL}}" alt="Error1" style="margin: 0 auto" />
+    </div>
+    <br />
+    <a
+      style="display: flex; justify-content: center; align-items: center"
+      href="https://apps.apple.com/vn/app/telegram-messenger/id686449807?l=vi"
+      >Bấm vào đây để tải Nếu bạn dùng IOS
+    </a>
+    <h1 style="display: flex; justify-content: center; align-items: center">
+      Kéo xuống và chọn vào Chọn để tiếp tục vào LINK! Để tiếp tục
+    </h1>
+    <br />
+    <div class="my-button-container">
+      <a href="{{Video18.LINK}}"
+        ><button class="my-button">Chọn để tiếp tục vào LINK!</button></a
+      >
+    </div>
+    {% endfor %}
+  </body>
+</html>
+{% endblock video_content %}

@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %} {% load static %} {% block video_content %}
+<div class="row">
+  {% for Video18 in Video18s %}
+  <div class="col-lg-3">
+    <img class="thumbnail" src="{{Video18.ImageURL}}" alt="Error1" />
+    <div class="box-element product">
+      <h4><strong>{{Video18.name}}</strong></h4>
+      <hr />
+      <button class="btn-outline-secondary add-btn">Lưu</button>
+      <a class="btn btn-outline-success" href="{% url 'buttun' %}">Xem</a>
+      <smaill style="display: inline-block; float: right"
+        >{{Video18.Mota}}</smaill
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<br /><br /><br />
+{% endblock video_content %}

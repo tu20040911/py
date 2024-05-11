@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %} {% load static %}
+<!---->
+{% block banner_slider %}{% endblock banner_slider %}
+<!---->
+{% block main-content %}
+<div class="row" style="width: 100%">
+  {%for product in products %}
+  <div class="col-lg-3">
+    <img class="thumbnail" src="{{product.ImageURL}}" alt="Error1" />
+    <div class="box-element product">
+      <h3><strong>{{product.name}}</strong></h3>
+      <hr />
+      <button class="btn-outline-secondary add-btn">Giỏ hàng</button>
+      <a class="btn btn-outline-success" href="#">Xem</a>
+      <small style="display: inline-block; float: right">
+        Giá: {{product.price}} VNĐ
+      </small>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<br />
+<br />
+{% endblock main-content %}

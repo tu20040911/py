@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{%static 'app/css/diemdanh.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="img/heart.png" />
+    <title>LOVE STORY</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>💕 ĐƯA TAY ĐÂY NÀO 💕</h1>
+
+      <div id="clock-box">
+        <div id="clock">
+          <date>Các Bạn sẽ bắt đầu một tình yêu tuyệt vời </date>
+          <time>Chúc các bạn hạnh phúc</time>
+        </div>
+      </div>
+
+      <div id="info">
+        <div class="one">
+          <img src="{% static 'app/images/anh1.jpg' %}" class="avt" />
+          <p>{{request.user.last_name}}</p>
+        </div>
+        <div id="heart">❤<anni>Số HOA của Nhau là : 0</anni></div>
+        <div class="two">
+          <img src="{% static 'app/images/anh2.jpg' %}" class="avt" />
+          <p>{{request.user.first_name}}</p>
+        </div>
+      </div>
+      <h1>
+        <button onclick="thoigian(2)" id="opt">
+          <span id="sophut"></span>:
+          <span id="sogiay"></span>
+        </button>
+        <br /><br /><br />
+        <button
+          id="nhanhoa"
+          style="display: none; margin-left: auto; margin-right: auto"
+        >
+          Nhận Hoa
+        </button>
+      </h1>
+      <script>
+        var thoiluong = 0;
+        function thoigian(x) {
+          thoiluong = x;
+          demnguoc();
+        }
+        if ((thoiluong = 2))
+          setInterval(function demnguoc() {
+            thoiluong--;
+            sophut = Math.floor(thoiluong / 60);
+            sogiay = thoiluong % 60;
+            document.getElementById("sophut").innerHTML = sophut;
+            document.getElementById("sogiay").innerHTML = sogiay;
+            if (thoiluong < 0) {
+              document.getElementById("sophut").innerHTML = "Bạn Vui lòng";
+              document.getElementById("sogiay").innerHTML =
+                "Nhấn vào Nhận Hoa để Nhận 10đ";
+              document.getElementById("nhanhoa").style.display = "block";
+            }
+          }, 1000);
+      </script>
+
+      <h1>💕 MÃI BÊN NHAU BẠN NHÉ 💕</h1>
+      <h1><a class="nav-link" href="{% url 'video18' %}">Quay lại</a></h1>
+      <p></p>
+    </div>
+  </body>
+</html>
